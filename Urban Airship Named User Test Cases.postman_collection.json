@@ -1,0 +1,209 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Urban Airship Named User Test Cases",
+		"_postman_id": "ee708b67-cd8b-2649-523e-1a56c08827e0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test Lookup Call",
+			"request": {
+				"url": "https://urban-airship-named-users.appspot.com/api/named_users/?id=named_user_1234",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "version=3",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YXBwbGljYXRpb25fa2V5OmFwcGxpY2F0aW9uX3NlY3JldA==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"channel_id\": \"df6a6b50-9843-0304-d5a5-743f246a4946\",\r\n   \"device_type\": \"ios\",\r\n   \"named_user_id\": \"user-id-1234\"\r\n}"
+				},
+				"description": "Test Lookup Call"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Bad Key",
+			"request": {
+				"url": "https://urban-airship-named-users.appspot.com/api/named_users/?id=named_user_1234",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YmFkX2tleTphcHBsaWNhdGlvbl9zZWNyZXQ=",
+						"description": ""
+					},
+					{
+						"key": "Content-type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "version=3",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Test Bad Key"
+			},
+			"response": []
+		},
+		{
+			"name": "Test bad Named User ID",
+			"request": {
+				"url": "https://urban-airship-named-users.appspot.com/api/named_users/?id=named_user_12345",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.urbanairship+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YXBwbGljYXRpb25fa2V5OmFwcGxpY2F0aW9uX3NlY3JldA==",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Test bad Named User ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Test bad secret",
+			"request": {
+				"url": "https://urban-airship-named-users.appspot.com/api/named_users/?id=named_user_1234",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YXBwbGljYXRpb25fa2V5OmJhZF9zZWNyZXQ=",
+						"description": ""
+					},
+					{
+						"key": "Content-type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.urbanairship+json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Test bad secret"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Listing",
+			"request": {
+				"url": "https://urban-airship-named-users.appspot.com/api/named_users",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "version=3",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YXBwbGljYXRpb25fa2V5OmFwcGxpY2F0aW9uX3NlY3JldA==",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Test Listing"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Associate API",
+			"request": {
+				"url": "https://urban-airship-named-users.appspot.com/api/named_users/associate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "version=3",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YXBwbGljYXRpb25fa2V5OmFwcGxpY2F0aW9uX3NlY3JldA==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"channel_id\": \"df6a6b50-9843-0304-d5a5-743f246a4946\",\r\n   \"device_type\": \"ios\",\r\n   \"named_user_id\": \"user-id-1234\"\r\n}"
+				},
+				"description": "Test Associate API"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Disaccociate API",
+			"request": {
+				"url": "https://urban-airship-named-users.appspot.com/api/named_users/disassociate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YXBwbGljYXRpb25fa2V5OmFwcGxpY2F0aW9uX3NlY3JldA==",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.urbanairship+json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"channel_id\": \"df6a6b50-9843-0304-d5a5-743f246a4946\",\r\n   \"device_type\": \"ios\",\r\n   \"named_user_id\": \"user-id-1234\"\r\n}"
+				},
+				"description": "Test Disaccociate API"
+			},
+			"response": []
+		}
+	]
+}
